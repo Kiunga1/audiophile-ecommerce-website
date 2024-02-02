@@ -1,0 +1,87 @@
+.hero {
+    background-image: url('../../assets/home/mobile/image-header.jpg');
+    background-size: cover;
+    background-position: center -80px ;
+    background-repeat: no-repeat;
+    text-align: center;
+    min-width: 350px;
+    height: 650px;
+    color: white;
+    position: relative;
+}
+
+
+.hero__content{
+    position: absolute;
+    max-width: 330px;
+    text-align: center;
+    top: 20%;
+    left: 10%;
+}
+
+.title {
+    font-weight: lighter;
+    font-size: 14px;
+    letter-spacing: 10px;
+}
+
+.hero__title {
+    font-weight: 900;
+    font-size: 40px;
+    letter-spacing: 1.29px;
+}
+
+.hero__description {
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 200;
+    max-width: 320px;
+}
+
+.hero__button{
+    background-color: #D87D4A;
+    padding: 15px;
+    color: white;
+    margin-top: 10px;
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .hero {
+        background-image: url('../../assets/home/tablet/image-header.jpg');
+        background-position: center -80px;
+    } 
+    .hero__content{
+        position: absolute;
+        max-width: 400px;
+        text-align: center;
+        align-items: center;
+        top: 20%;
+        left: 28%;
+    }
+
+    
+    .hero__description {
+        max-width: 350px;
+    }
+
+    .hero__title{
+        font-size: 56px;
+        letter-spacing: 2px;
+    }
+}
+
+/* For Desktop */
+@media only screen and (min-width: 1024px) {
+    .hero {
+        background-image: url('../../assets/home/desktop/image-hero.jpg');
+    }
+
+    .hero__content {
+        text-align: left;
+    }
+
+    .hero__button {
+        padding: 15px 20px;
+    }
+}
