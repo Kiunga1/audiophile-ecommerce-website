@@ -4,12 +4,11 @@
     background-position: center -80px ;
     background-repeat: no-repeat;
     text-align: center;
-    min-width: 350px;
+    width: 100%;
     height: 650px;
     color: white;
     position: relative;
 }
-
 
 .hero__content{
     position: absolute;
@@ -17,6 +16,7 @@
     text-align: center;
     top: 20%;
     left: 10%;
+    gap: 5px;
 }
 
 .title {
@@ -29,6 +29,7 @@
     font-weight: 900;
     font-size: 40px;
     letter-spacing: 1.29px;
+    margin-top: 20px;
 }
 
 .hero__description {
@@ -36,13 +37,19 @@
     line-height: 25px;
     font-weight: 200;
     max-width: 320px;
+    margin-top: 20px;
 }
 
 .hero__button{
     background-color: #D87D4A;
     padding: 15px;
     color: white;
-    margin-top: 10px;
+    margin-top: 40px;
+    border: none;
+}
+
+.hero__button:hover {
+    background-color: #FBAF85;
 }
 
 /* Tablets */
@@ -60,7 +67,6 @@
         left: 28%;
     }
 
-    
     .hero__description {
         max-width: 350px;
     }

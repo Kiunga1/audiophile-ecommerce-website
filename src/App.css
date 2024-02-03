@@ -1,5 +1,24 @@
+/* Reset/ normalize*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* Basic */
+
+
 body {
     margin: 0;
     font-family: 'Manrope', sans-serif;
-    
+    height: 100vh;
 }
