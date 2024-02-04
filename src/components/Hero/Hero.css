@@ -40,18 +40,6 @@
     margin-top: 20px;
 }
 
-.hero__button{
-    background-color: #D87D4A;
-    padding: 15px;
-    color: white;
-    margin-top: 40px;
-    border: none;
-}
-
-.hero__button:hover {
-    background-color: #FBAF85;
-}
-
 /* Tablets */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .hero {
@@ -87,7 +75,5 @@
         text-align: left;
     }
 
-    .hero__button {
-        padding: 15px 20px;
-    }
+    
 }

@@ -40,6 +40,9 @@
   font-weight: 100;
 }
 
+.category .category__content .shop__button span:hover{
+  text-decoration: underline; 
+}
 .arrow{
   color: #D87D4A;
 }
