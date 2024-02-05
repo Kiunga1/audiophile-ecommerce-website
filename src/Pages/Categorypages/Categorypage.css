@@ -1,0 +1,36 @@
+.product__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.product__container .products__category {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 30px;
+    text-transform: uppercase;
+}
+
+.product__list {
+    margin-bottom: 100px;
+}
+
+
+/* Tablets */
+@media only screen and (min-width: 768px) {
+    .product__container .products__category {
+        font-size: 40px;
+        padding: 40px;
+    }
+}
+
+/* For Desktop */
+@media only screen and (min-width: 1024px) {
+    .product__list {
+        margin-bottom: 0px;
+    }
+}

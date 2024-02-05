@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 // Button.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Button.css';
 
-const Button = ({ backgroundColor, hoverColor, children }) => {
+const Button = ({ backgroundColor, hoverColor }) => {
   const [isHovered, setHovered] = useState(false);
 
   const buttonStyle = {

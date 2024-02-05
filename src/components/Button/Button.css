@@ -3,6 +3,7 @@
     color: white;
     margin-top: 40px;
     border: none;
+    cursor: pointer;
 }
 
 @media only screen and (min-width:  1024px) {

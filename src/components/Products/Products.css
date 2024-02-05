@@ -1,8 +1,6 @@
 .product {
-    margin-top: 40px;
+    margin-top: 50px;
     padding: 15px;
-    padding-top: 0;
-
 }
 .product__one__content {
     color: white;
@@ -95,7 +93,7 @@
 /* Tablets */
 @media only screen and (min-width: 768px)  {
     .product {
-        padding: 0 10%;
+        padding: 0 5%;
     }
 
     .product__one__content {
@@ -170,5 +168,9 @@
         height: 330px;
         background-image: url('../../assets/products/image-speaker-desktop-zx7.jpg');
         padding-left: 30px;
+    }
+
+    .product__three__content{
+        height: 320px;
     }
 }

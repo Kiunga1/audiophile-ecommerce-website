@@ -1,6 +1,5 @@
 
 import Speaker from '../../assets/products/image-speaker-zx9.png'
-import Earphones from '../../assets/products/image-product-earphones-yx1.jpg'
 import Button from '../Button/Button'
 import './Products.css'
 
