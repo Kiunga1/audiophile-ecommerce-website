@@ -1,4 +1,4 @@
-/* .product__list {
+.product__list {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,4 +33,4 @@
     .product__list {
         margin-bottom: 0px;
     }
-} */
+} 
