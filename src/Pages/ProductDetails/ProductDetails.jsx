@@ -15,7 +15,7 @@ const ProductDetailPage = () => {
   return (
     <div>
       <h2>{product.name}</h2>
-      <img src={product.image.tablet} alt={product.name} />
+      <img src={product.image.mobile} alt={product.name} />
       <p>{product.description}</p>
       <p>Price: ${product.price}</p>
       {/* Add more details as needed */}

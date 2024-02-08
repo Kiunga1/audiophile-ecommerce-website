@@ -1,8 +1,9 @@
 .product__list {
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 50px;
 }
 .product__container .products__category {
     font-size: 28px;
@@ -33,4 +34,4 @@
     .product__list {
         margin-bottom: 0px;
     }
-} 
+}  
