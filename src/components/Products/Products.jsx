@@ -18,14 +18,14 @@ const Products = () => {
 
       <div className="product__two__content">
         <h3 className="product__title">ZX7 SPEAKER</h3>
-        <Button backgroundColor="#000000" hoverColor="#4C4C4C"/>
+        <Button backgroundColor="#F1F1F1" hoverColor="#000000" hoverTextColor='white' color='#000000' border="1px solid black"/>
       </div>
 
       <div className="product__three__content">
         <div className="img"></div>
         <div className="product__three__details">
           <h3 className='title'>YX1 earphones</h3>
-          <Button backgroundColor="#000000" hoverColor="#4C4C4C"/>
+        <Button backgroundColor="#F1F1F1" hoverColor="#000000" hoverTextColor='white' color='#000000' border="1px solid black"/>
         </div>
       </div>
 
