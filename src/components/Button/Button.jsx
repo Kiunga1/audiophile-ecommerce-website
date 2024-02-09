@@ -1,9 +1,7 @@
-/* eslint-disable react/prop-types */
-// Button.js
 import { useState } from 'react';
 import './Button.css';
 
-const Button = ({ backgroundColor, hoverColor, color, hoverTextColor, border }) => {
+const Button = ({ backgroundColor, hoverColor, color, hoverTextColor, border, content, onClick }) => {
   const [isHovered, setHovered] = useState(false);
 
   const buttonStyle = {
@@ -18,11 +16,13 @@ const Button = ({ backgroundColor, hoverColor, color, hoverTextColor, border }) 
       style={buttonStyle}
       onMouseOver={() => setHovered(true)}
       onMouseOut={() => setHovered(false)}
+      onClick={onClick}
     >
-      SEE PRODUCT
+      {content}
     </button>
   );
 };
 
 export default Button;
+
 

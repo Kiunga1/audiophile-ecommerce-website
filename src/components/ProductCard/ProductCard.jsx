@@ -20,10 +20,11 @@ const ProductCard = ({ product }) => {
     <div className="product__card">
       <img src={imageUrl} alt={product.name} />
       <div className='product__detail'>
+        {product.new && <h1 className='title'>New Product</h1>}
         <h3>{product.name}</h3>
         <p>{product.description}</p>
         <Link to={`/product/${product.slug}`}>
-          <Button backgroundColor="#D87D4A" hoverColor="#FBAF85"/>
+          <Button content="SEE PRODUCT" backgroundColor="#D87D4A" hoverColor="#FBAF85"/>
         </Link>
       </div>
     </div>

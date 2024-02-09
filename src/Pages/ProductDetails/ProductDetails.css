@@ -1,0 +1,107 @@
+.product_details {
+    padding: 50px  15px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+.product_details .basicInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.product_details h2, h3 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 39px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+
+}
+
+.product_details p {
+  padding-bottom: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+.product_details img {
+  height: 330px;
+  width: 100%;
+}
+
+.product_details .basicInfo .price {
+  font-weight: bold;
+}
+
+.features_includes {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Tablets */
+@media only screen and (min-width: 768px)  {
+    .product_details {
+      padding: 5%;
+    }
+
+    .product_details .basicInfo {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .product_details .basicInfo img {
+      height: 480px;
+      width: 50%;
+    }
+}
+
+
+/* Tablets only */
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+  .product_details .features_includes .includes {
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+    }
+}
+
+  /* For Desktop */
+  @media only screen and (min-width: 1024px) {
+    .product_details {
+      padding: 10%;
+    }
+
+    .product_details h2, h3 {
+      max-width: 450px;
+      font-size: 40px;
+      line-height: 44px;
+      letter-spacing: 1.5px;
+    
+    }
+    
+    .product_details img {
+      min-height: 560px;
+    }
+
+    .features_includes {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+
+
+    .features {
+      width: 50%;
+    }
+  }

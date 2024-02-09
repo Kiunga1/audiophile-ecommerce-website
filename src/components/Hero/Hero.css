@@ -8,6 +8,7 @@
     height: 650px;
     color: white;
     position: relative;
+    margin-bottom: 60px;
 }
 
 .hero__content{
@@ -68,6 +69,7 @@
 /* For Desktop */
 @media only screen and (min-width: 1024px) {
     .hero {
+        margin-bottom: 0px;
         background-image: url('../../assets/home/desktop/image-hero.jpg');
     }
 
