@@ -7,12 +7,12 @@ import Button from '../Button/Button'
 const ProductCard = ({ product }) => {
 
   let imageUrl;
-  if (window.innerWidth >= 768) {
-    imageUrl = product.image.desktop;
-  // } else if (window.innerWidth >= 76){
-  //   imageUrl = product.image.tablet;
+  if (window.innerWidth >= 1023) {
+    imageUrl = product.categoryImage.desktop;
+  } else if (window.innerWidth >= 768){
+    imageUrl = product.categoryImage.tablet;
   }else {
-    imageUrl = product.image.mobile;
+    imageUrl = product.categoryImage.mobile;
   }
 
 

@@ -14,13 +14,22 @@ const ProductDetailPage = () => {
     return <div>Product not found</div>
   }
 
+  let imageUrl;
+  if (window.innerWidth >= 1023) {
+    imageUrl = product.image.desktop;
+  } else if (window.innerWidth >= 768){
+    imageUrl = product.image.tablet;
+  }else {
+    imageUrl = product.image.mobile;
+  }
+
   return (
     <div className='product_details'>
       <Link to="/" className="go-back-link">
         <p>Go Back</p>
       </Link>
       <div className='basicInfo'>
-        <img src={product.image.tablet} alt={product.name} />
+        <img src={imageUrl} alt={product.name} />
         <div>
         {product.new && <h1 className='title'>New Product</h1>}
           <h2>{product.name}</h2>
@@ -39,21 +48,39 @@ const ProductDetailPage = () => {
         <div className="includes">
           <h3>in the box</h3>
           <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            {product.includes.map((include, index) => (
+                <li key={index}>
+                  <span>{include.quantity}x  </span>  {include.item}
+                </li>
+              ))}
           </ul>
         </div>
       </div>
       <div className="images">
         <div className="first__second__img">
-          <img src="prodect.gallery.first.mobile" alt="product.name" />
-          <img src="prodect.gallery.second.mobile" alt="product.name" />
+          <div>
+            <img src={product.gallery.first.mobile} alt="product.name" />
+          </div>
+          <div>
+            <img src={product.gallery.second.mobile} alt="product.name" />
+          </div>
         </div>
-        <img className="third__img" src="prodect.gallery.third.mobile" alt="product.name" />
+        <img className="third__img" src={product.gallery.third.mobile} alt="product.name" />
       </div>
-      <div className="other_products">
-        <div className="other_products_list">
+      <div className='other_products'>
+        <h3>You May Also Like</h3>
+        <div className="others">
+          <ul className='other_products_list'>
+          {product.others.map((otherProduct) => (
+            <li key={otherProduct.slug} className='other_product'>
+              <img src={otherProduct.image.mobile} alt={otherProduct.name} />
+              <h3>{otherProduct.name}</h3>
+              <Link to={`/product/${otherProduct.slug}`}>
+                <Button backgroundColor="#D87D4A" hoverColor="#FBAF85" content="See Products" />
+              </Link>
+            </li>
+          ))}
+          </ul>
         </div>
       </div>
 

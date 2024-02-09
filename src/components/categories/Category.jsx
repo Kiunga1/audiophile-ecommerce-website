@@ -15,9 +15,9 @@ const Category = () => {
         <div className="shop__button">
           <Link to="/headphones">
             <span>SHOP</span>
-            <icon className='arrow'>
+            <div className='arrow'>
               <MdKeyboardArrowRight/>
-            </icon>
+            </div>
           </Link>
         </div>
       </div>
@@ -27,9 +27,9 @@ const Category = () => {
         <h2 className="category__title">Speakers</h2>
         <div className="shop__button">
           <span>SHOP</span>
-          <icon className='arrow'>
+          <div className='arrow'>
             <Link to="/speakers"><MdKeyboardArrowRight/></Link>
-          </icon>
+          </div>
         </div>
       </div>
 
@@ -38,9 +38,9 @@ const Category = () => {
         <h2 className="category__title">Earphones</h2>
         <div className="shop__button">
           <span>SHOP</span>
-          <icon className='arrow'>
+          <div className='arrow'>
             <Link to="/earphones"><MdKeyboardArrowRight/></Link>
-          </icon>
+          </div>
         </div>
       </div>
     </section>
