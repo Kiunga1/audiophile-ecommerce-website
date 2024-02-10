@@ -2,6 +2,8 @@
 import { Link, useParams } from 'react-router-dom'
 import data from '../../../resources/data.json';
 import Button from '../../components/Button/Button'
+import Category from '../../components/categories/Category'
+import About from '../../components/About/About'
 import './ProductDetails.css'
 
 const ProductDetailPage = () => {
@@ -74,7 +76,7 @@ const ProductDetailPage = () => {
           {product.others.map((otherProduct) => (
             <li key={otherProduct.slug} className='other_product'>
               <img src={otherProduct.image.mobile} alt={otherProduct.name} />
-              <h3>{otherProduct.name}</h3>
+              <h4 className='otherProductsTitle'>{otherProduct.name}</h4>
               <Link to={`/product/${otherProduct.slug}`}>
                 <Button backgroundColor="#D87D4A" hoverColor="#FBAF85" content="See Products" />
               </Link>
@@ -84,14 +86,8 @@ const ProductDetailPage = () => {
         </div>
       </div>
 
-      {/* <div className="other_products"> */}
-        {/* map through others and display */}
-        {/* <div className="other__product">
-          <img src={product.others.image.mobile} alt={product.others.name} />
-          <h4>{product.others.name}</h4>
-          
-        </div>
-      </div> */}
+      <Category/>
+      <About/>
       
     </div>
   );

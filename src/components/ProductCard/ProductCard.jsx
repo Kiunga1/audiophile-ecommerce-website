@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './ProductCard.css'
 import Button from '../Button/Button'
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, isReverse }) => {
 
   let imageUrl;
   if (window.innerWidth >= 1023) {
@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
 
 
   return (
-    <div className="product__card">
+    <div className={`product__card ${isReverse ? 'reverse' : ''}`}>
       <img src={imageUrl} alt={product.name} />
       <div className='product__detail'>
         {product.new && <h1 className='title'>New Product</h1>}

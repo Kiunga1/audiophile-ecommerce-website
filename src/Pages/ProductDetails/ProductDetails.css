@@ -1,10 +1,10 @@
 .product_details {
-    padding: 50px  15px;
+    padding: 0  15px;
     text-align: left;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 60px;
+    gap: 40px;
 }
 
 .product_details .go-back-link {
@@ -20,14 +20,26 @@
   gap: 40px;
 }
 
-.product_details h2, h3 {
+.product_details h2 {
   font-size: 28px;
   font-weight: 700;
   line-height: 39px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
+}
 
+.product_details h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 33px;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+
+.product_details .others .otherProductsTitle {
+  padding-bottom: 5px;
 }
 
 .product_details p {
@@ -86,18 +98,6 @@ ul {
   width: 100%;
 }
 
-.other_products {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.product_details .other_products .other_products_list img {
-  height: 210px;
-  width: 100%;
-}
-
 .images {
   display: flex;
   flex-direction: column;
@@ -105,6 +105,23 @@ ul {
   align-items: center;
   gap: 15px;
 }
+
+.other_product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.product_details .other_products .other_products_list img {
+  padding: 20px 0;
+  height: 120px;
+  width: 100%;
+}
+
+
 
 /* Tablets */
 @media only screen and (min-width: 768px)  {
@@ -151,6 +168,17 @@ ul {
       width: 50%;
     }
 
+    .product_details .other_products .other_products_list img{
+      height: 315px;
+      width: 220px;
+    }
+
+    h4 {
+      text-transform: uppercase;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 1.7px;
+    }
   }
 /* Tablets only */
 @media only screen and (min-width: 768px) and (max-width: 1023px){
@@ -173,11 +201,18 @@ ul {
       padding: 10%;
     }
 
-    .product_details h2, h3 {
+    .product_details  h3 {
       max-width: 450px;
       font-size: 40px;
       line-height: 44px;
       letter-spacing: 1.5px; 
+    }
+
+    .product_details h3 {
+      max-width: 450px;
+      font-size: 32px;
+      line-height: 36px;
+      letter-spacing: 1.1px; 
     }
     
     .product_details .basicInfo img {
@@ -215,5 +250,9 @@ ul {
 
     .images .first__second__img {
       gap: 20px;
+    }
+
+    .product_details .other_products .other_products_list img{
+      height: 470px;
     }
   }
