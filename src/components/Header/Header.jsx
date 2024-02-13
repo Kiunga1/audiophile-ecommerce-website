@@ -1,14 +1,22 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import './Header.css'
 import { Link } from 'react-router-dom'
 import { FaBars, FaShoppingCart } from "react-icons/fa"
 import Category from "../categories/Category"
+import Cart from '../Cart/Cart';
 
-const Header = () => {
+const Header = ({cartItems, removeFromCart, updateQuantity}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isCartOpen, setIsCartOpen] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
+  }
+
+  //Toggle visibility of cart component
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
   }
 
   return (
@@ -32,13 +40,17 @@ const Header = () => {
             <Link to="/earphones">EARPHONES</Link>
           </li>
         </ul>
-        <div className="header__cart">
-          <Link to="/checkout">
+        <div className="header__cart" onClick={toggleCart}>
             <FaShoppingCart/>
-          </Link>
         </div>
       </div>
-      {isMenuOpen && <Category />}
+      <div className='navbar'>
+        {isMenuOpen && <Category />}
+      </div>
+      <div className="cart">
+        {isCartOpen && <Cart cartItems={cartItems} removeFromCart={removeFromCart} updateQuantity={updateQuantity}/>}
+      </div>
+      
     </header>
   );
 };

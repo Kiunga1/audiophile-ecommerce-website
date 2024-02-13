@@ -1,13 +1,18 @@
-
+import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom'
 import data from '../../../resources/data.json';
 import Button from '../../components/Button/Button'
 import Category from '../../components/categories/Category'
 import About from '../../components/About/About'
+import { FaMinus } from "react-icons/fa6";
 import './ProductDetails.css'
+import { FaPlus } from "react-icons/fa";
 
-const ProductDetailPage = () => {
+const ProductDetailPage = ({ cartItems, addToCart }) => {
   const { slug } = useParams();
+  //state to track quantity
+  const [quantity, setQuantity] = useState(0);
+  const [addedToCart, setAddedToCart] = useState(false);
 
   // Find the product with the matching slug
   const product = data.find((p) => p.slug === slug)
@@ -25,6 +30,20 @@ const ProductDetailPage = () => {
     imageUrl = product.image.mobile;
   }
 
+  const handleAddToCart = () => {
+    // Add item to cart and set addedToCart to true
+    const newItem = {
+      image: product.image.mobile,
+      name: product.name,
+      price: product.price,
+      quantity: quantity
+    };
+    addToCart(newItem);
+    setAddedToCart(true);
+    // Reset quantity to 0 after adding to cart
+    setQuantity(0);
+  };
+
   return (
     <div className='product_details'>
       <Link to="/" className="go-back-link">
@@ -37,7 +56,25 @@ const ProductDetailPage = () => {
           <h2>{product.name}</h2>
           <p>{product.description}</p>
           <p className='price'> $ {product.price}</p>
-          <Button backgroundColor="#D87D4A" hoverColor="#FBAF85" content="Add to cart"/>
+          <div className="quantity__container">
+            <p className='quantity__desc'>
+              <span 
+              className='minus'
+              onClick={() => setQuantity(Math.max(0, quantity - 1))}
+              >
+                <FaMinus/>
+              </span>
+              <span className='num'>{quantity}</span>
+              <span 
+              className='plus'
+              onClick={() => setQuantity(quantity + 1)}
+              >
+                <FaPlus />
+              </span>
+            </p>
+            <Button backgroundColor="#D87D4A" hoverColor="#FBAF85" content="Add to cart" onClick={handleAddToCart}/>
+            {addedToCart && <p className="added-to-cart">Item added to cart!</p>}
+          </div>
           
         </div>
       </div>
