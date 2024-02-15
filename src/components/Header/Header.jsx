@@ -6,7 +6,7 @@ import { FaBars, FaShoppingCart } from "react-icons/fa"
 import Category from "../categories/Category"
 import Cart from '../Cart/Cart';
 
-const Header = ({cartItems, removeFromCart, updateQuantity}) => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isCartOpen, setIsCartOpen] = useState(false)
 
@@ -48,7 +48,7 @@ const Header = ({cartItems, removeFromCart, updateQuantity}) => {
         {isMenuOpen && <Category />}
       </div>
       <div className="cart">
-        {isCartOpen && <Cart cartItems={cartItems} removeFromCart={removeFromCart} updateQuantity={updateQuantity}/>}
+        {isCartOpen && <Cart />}
       </div>
       
     </header>

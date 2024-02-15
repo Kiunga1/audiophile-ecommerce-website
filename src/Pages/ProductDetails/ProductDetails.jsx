@@ -1,18 +1,18 @@
-import { useState } from 'react';
+import { useCart } from '../../context/CartContext';
 import { Link, useParams } from 'react-router-dom'
 import data from '../../../resources/data.json';
 import Button from '../../components/Button/Button'
 import Category from '../../components/categories/Category'
 import About from '../../components/About/About'
-import { FaMinus } from "react-icons/fa6";
+// import { FaMinus } from "react-icons/fa6";
 import './ProductDetails.css'
-import { FaPlus } from "react-icons/fa";
+import { useState } from 'react';
+// import { FaPlus } from "react-icons/fa";
 
-const ProductDetailPage = ({ cartItems, addToCart }) => {
+const ProductDetailPage = () => {
+  const {addToCart} = useCart();
   const { slug } = useParams();
-  //state to track quantity
-  const [quantity, setQuantity] = useState(0);
-  const [addedToCart, setAddedToCart] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
   // Find the product with the matching slug
   const product = data.find((p) => p.slug === slug)
@@ -31,17 +31,21 @@ const ProductDetailPage = ({ cartItems, addToCart }) => {
   }
 
   const handleAddToCart = () => {
-    // Add item to cart and set addedToCart to true
-    const newItem = {
-      image: product.image.mobile,
-      name: product.name,
-      price: product.price,
-      quantity: quantity
-    };
-    addToCart(newItem);
-    setAddedToCart(true);
-    // Reset quantity to 0 after adding to cart
-    setQuantity(0);
+    //Add the product with specified quantity to cart
+    addToCart({...product, quantity});
+    setQuantity(1);
+  };
+
+  const handleIncrement = () => {
+    // Increment quantity by 1
+    setQuantity(quantity + 1); 
+  };
+
+  const handleDecrement = () => {
+    // Decrement quantity by 1, but maintain state 1
+    if (quantity > 1) {
+      setQuantity(quantity - 1); 
+    }
   };
 
   return (
@@ -58,22 +62,11 @@ const ProductDetailPage = ({ cartItems, addToCart }) => {
           <p className='price'> $ {product.price}</p>
           <div className="quantity__container">
             <p className='quantity__desc'>
-              <span 
-              className='minus'
-              onClick={() => setQuantity(Math.max(0, quantity - 1))}
-              >
-                <FaMinus/>
-              </span>
-              <span className='num'>{quantity}</span>
-              <span 
-              className='plus'
-              onClick={() => setQuantity(quantity + 1)}
-              >
-                <FaPlus />
-              </span>
+            <button onClick={handleDecrement}>-</button>
+            <button onChange={(e) => setQuantity(parseInt(e.target.value))}>{quantity}</button>
+            <button onClick={handleIncrement}>+</button>
             </p>
             <Button backgroundColor="#D87D4A" hoverColor="#FBAF85" content="Add to cart" onClick={handleAddToCart}/>
-            {addedToCart && <p className="added-to-cart">Item added to cart!</p>}
           </div>
           
         </div>
