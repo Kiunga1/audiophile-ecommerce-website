@@ -59,12 +59,12 @@ const ProductDetailPage = () => {
         {product.new && <h1 className='title'>New Product</h1>}
           <h2>{product.name}</h2>
           <p>{product.description}</p>
-          <p className='price'> $ {product.price}</p>
+          <p className='price'> $ {product.price.toLocaleString()}</p>
           <div className="quantity__container">
             <p className='quantity__desc'>
-            <button onClick={handleDecrement}>-</button>
-            <button onChange={(e) => setQuantity(parseInt(e.target.value))}>{quantity}</button>
-            <button onClick={handleIncrement}>+</button>
+            <button className='minus' onClick={handleDecrement}>-</button>
+            <button className = 'num'onChange={(e) => setQuantity(parseInt(e.target.value))}>{quantity}</button>
+            <button className='plus' onClick={handleIncrement}>+</button>
             </p>
             <Button backgroundColor="#D87D4A" hoverColor="#FBAF85" content="Add to cart" onClick={handleAddToCart}/>
           </div>

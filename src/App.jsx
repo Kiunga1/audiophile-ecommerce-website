@@ -22,7 +22,6 @@ const App = () => {
           <Route path="/headphones" element={<HeadphonesPage />} />
           <Route path="/speakers" element={<SpeakersPage/>} />
           <Route path="/earphones" element={<EarphonesPage />} />
-          {/* <Route path="/category/:category" component={CategoryPage} /> */}
           <Route path="/product/:slug" element={<ProductDetails/>} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>

@@ -3,17 +3,39 @@ import { useCart } from '../../context/CartContext';
 // import { FaMinus, FaPlus } from "react-icons/fa";
 import './Cart.css';
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const { cartItems, total, addToCart, removeFromCart, clearCart } = useCart();
 
+  // const handleIncreaseQuantity = (itemId) => {
+  //   addToCart(cartItems.find(item => item.id === itemId));
+  // };
+
   const handleIncreaseQuantity = (itemId) => {
-    addToCart(cartItems.find(item => item.id === itemId));
+    const itemToUpdate = cartItems.find(item => item.id === itemId);
+    if (itemToUpdate) {
+      itemToUpdate.quantity += 1;
+      addToCart(itemToUpdate);
+    }
   };
+  
 
   const handleDecreaseQuantity = (itemId) => {
     removeFromCart(itemId);
   };
+
+  // const handleAddOne = (itemId) => {
+  //   const itemToUpdate = cartItems.find((item) => item.id === itemId);
+  //   if (itemToUpdate) {
+  //     itemToUpdate.quantity += 1;
+  //     addToCart(itemToUpdate);
+  //   }
+  // };
+
+  // const handleAddOne = (itemId) => {
+  //   handleIncreaseQuantity(itemId);
+  // };
 
   const handleClearCart = () => {
     clearCart();
@@ -33,13 +55,13 @@ const Cart = () => {
               <img src={item.image.mobile} alt="" />
               <p className='price'>
                 <span className='item_name'>{item.name}</span>
-                <span>$ {item.price}</span>
+                <span>$ {item.price.toLocaleString()}</span>
               </p>
               
               <p className='quantity__desc'>
-                <button onClick={() => handleIncreaseQuantity(item.id)}>+</button>
-                <button >{item.quantity}</button>
-                <button onClick={() => handleDecreaseQuantity(item.id)}>-</button>
+                <button className='minus' onClick={() => handleDecreaseQuantity(item.id)}>-</button>
+                <button className='num' >{item.quantity}</button>
+                <button className='plus' onClick={() => handleIncreaseQuantity(item.id)}>+</button>
               </p>
             </div>
           </li>
@@ -47,10 +69,11 @@ const Cart = () => {
       </ul>
       <div className="total__price">
         <span>Total: </span>
-        <h3>${total}</h3>
+        <h3>${total.toLocaleString()}</h3>
       </div>
-      
-      <Button backgroundColor="#D87D4A" hoverColor="#FBAF85" content="Checkout" />
+      <Link to='/checkout'>
+        <Button backgroundColor="#D87D4A" hoverColor="#FBAF85" content="Checkout" />  
+      </Link>
     </div>
   );
 };

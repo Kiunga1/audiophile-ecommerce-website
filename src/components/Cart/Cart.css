@@ -29,19 +29,10 @@
 li{
     padding-top: 10px;
 }
-.quantity__desc {
-    width: 100px;
-    height: 32px;
-}
 
 .cart__container .item__desc p .item_name {
     font-size: 15px;
     font-weight: bold;
-}
-
-.remove {
-    color: rgb(106, 23, 23);
-    font-weight: 600;
 }
 
 .total__price{
