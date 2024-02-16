@@ -1,9 +1,29 @@
+import { useCart } from "../../context/CartContext";
 import  { useState } from "react";
 import "./Checkout.css";
 import { Link } from "react-router-dom";
 import CheckoutIcon from '../../assets/checkouticon/checkout-icon.png'
+import Button from "../../components/Button/Button";
 
 const Checkout = () => {
+  const { cartItems } = useCart();
+
+  // Function to calculate total price of items in the cart
+  const calculateTotalPrice = () => {
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+
+  // Function to calculate VAT (Value Added Tax)
+  const calculateVAT = () => {
+    return calculateTotalPrice() * 0.2; // 20% VAT rate
+  };
+
+  // Function to calculate total price including VAT and shipping
+  const calculateTotalWithVATAndShipping = () => {
+    return calculateTotalPrice() + calculateVAT() + 50; // Shipping cost of $50
+  };
+
+
   const [billingDetails, setBillingDetails] = useState({
     name: "",
     phoneNumber: "",
@@ -206,7 +226,42 @@ const Checkout = () => {
       <div className="summary-container">
         <div className="checkout-summary">
             <h2>SUMMARY</h2>
+            <div className="cart-summary">
+              {cartItems.map((item) => (
+                <div key={item.id} className="cart-item">
+                  <div className="item-details">
+                    <img src={item.image.desktop} alt="Product" className="product-image" />
+                    <div className="item-detail">
+                      <h5 className="item-name">{item.name}</h5>
+                      <p className="item-price">${(item.price * item.quantity).toFixed(2)}</p>
+                    </div>
+                  </div>  
+                  <p className="item-quantity"> X{item.quantity}</p>
+                </div>
+              ))}
+            </div>
+            <div className="totals-summary">
+              <div className="total">
+                <p>TOTAL: </p>
+                <span className="bold">${calculateTotalPrice().toFixed(2)}</span>
+              </div>
+              <div className="total">
+                <p>SHIPPING:</p>
+                <span className="bold">$50</span>
+              </div>
+              <div className="total">
+                <p>VAT (INCLUDED): </p>
+                <span className="bold">${calculateVAT().toFixed(2)}</span>
+              </div>
+              <div className="total">
+                <p>GRAND TOTAL:</p>
+                <span className="bold grand-total">${calculateTotalWithVATAndShipping().toFixed(2)}</span>
+              </div>
+          </div>
             {/* Summary content remains unchanged */}
+
+            <Button backgroundColor="#D87D4A" hoverColor="#FBAF85" content="CONTINUE & PAY" fullWidth={true} />  
+
         </div>
       </div>
     </div>
