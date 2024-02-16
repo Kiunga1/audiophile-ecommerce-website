@@ -1,0 +1,121 @@
+.checkout {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 20px;
+}
+
+.checkout > div {
+  margin-bottom: 20px;
+}
+
+.checkout h3 {
+  font-size: 14px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #D87D4A;
+  line-height: 25px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.checkout input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.checkout label, .payment-method label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  letter-spacing: -0.2px;
+  font-size: 12px;
+}
+.e-money, .cash-on-delivery{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  padding: 10px 30px;
+  border-radius: 5px;
+  /* display: inline-block; */
+}
+
+.e-money, .cash-on-delivery {
+  display: flex;
+  align-items: center;
+}
+
+.e-money input[type="radio"], .cash-on-delivery input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.e-money input[type="radio"]:checked, .cash-on-delivery input[type="radio"]:checked {
+  background-color: #D87D4A;
+  border-color: #D87D4A;
+  color: white;
+}
+
+.cash-on-delivery-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.cash-on-delivery-info p {
+  width: 75%;
+}
+
+.checkout .go-back-link {
+  margin-top: 30px;
+}
+
+/* Tablets and Desktop*/
+@media only screen and (min-width: 768px){
+  .checkout {
+    padding: 0 5%;
+  }
+
+  .payment-method {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .biling-info, .grid-display, .eMoney-details{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .cash-on-delivery-info{
+  gap: 40px;
+}
+
+.checkout {
+  background-color: #F1F1F1;
+  padding: 0 10%;
+}
+
+.checkout-container, .summary-container {
+  background-color: white;
+  padding: 50px;
+}
+}
+
