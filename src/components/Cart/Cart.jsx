@@ -72,7 +72,7 @@ const Cart = () => {
         <h3>${total.toLocaleString()}</h3>
       </div>
       <Link to='/checkout'>
-        <Button backgroundColor="#D87D4A" hoverColor="#FBAF85" content="Checkout" />  
+        <Button backgroundColor="#D87D4A" hoverColor="#FBAF85" content="Checkout" fullWidth={true} />  
       </Link>
     </div>
   );

@@ -2,13 +2,14 @@
 import { useState } from 'react';
 import './Button.css';
 
-const Button = ({ backgroundColor, hoverColor, color, hoverTextColor, border, content, onClick }) => {
+const Button = ({ backgroundColor, hoverColor, color, hoverTextColor, border, fullWidth, content, onClick }) => {
   const [isHovered, setHovered] = useState(false);
 
   const buttonStyle = {
     backgroundColor: isHovered ? hoverColor : backgroundColor,
     color: isHovered ? hoverTextColor : color,
-    border: border
+    border: border,
+    width: fullWidth ? '100%' : 'auto'
   };
 
   return (
