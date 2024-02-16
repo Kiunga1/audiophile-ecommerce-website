@@ -24,7 +24,9 @@ const Header = () => {
       <div className="header__content">
         <div className='logo'>
           <FaBars className='header__menu' onClick={toggleMenu}/>
-          <h1 className="header__title">audiophile</h1>
+          <Link to='/'>
+            <h1 className="header__title">audiophile</h1>
+          </Link>
         </div>
         <ul className={`header__nav ${isMenuOpen ? 'open' : ''}`}>
           <li className="header__nav-item">

@@ -52,7 +52,7 @@ const Cart = () => {
         {cartItems && cartItems.length > 0 && cartItems.map((item, index) => (
           <li key={index}>
             <div className="item__desc">
-              <img src={item.image.mobile} alt="" />
+              <img src={item.image.desktop} alt="product image" />
               <p className='price'>
                 <span className='item_name'>{item.name}</span>
                 <span>$ {item.price.toLocaleString()}</span>

@@ -78,11 +78,6 @@ a {
       gap: 20px;
     }
 
-    .header .cart{
-      width: 380px;
-      left : 350px;
-      top: 114px;
-    }
   }
 
   /* Tablets */
@@ -95,6 +90,12 @@ a {
     width: 100%;
     color: black;
     z-index: 2;
+  }
+
+  .header .cart{
+    width: 380px;
+    left : 350px;
+    top: 114px;
   }
 }
 
@@ -109,7 +110,7 @@ a {
     }
 
     .header .cart{
-      width: 380px;
+      width: 450px;
       left : 294px;
       top: 140px;
     }
