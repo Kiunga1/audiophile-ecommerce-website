@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
+import { useCart } from '../../context/CartContext';
 import { useState } from 'react';
 import './Header.css'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { FaBars, FaShoppingCart } from "react-icons/fa"
 import Category from "../categories/Category"
 import Cart from '../Cart/Cart';
@@ -9,6 +10,7 @@ import Cart from '../Cart/Cart';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isCartOpen, setIsCartOpen] = useState(false)
+  const { cartItems } = useCart();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -30,19 +32,20 @@ const Header = () => {
         </div>
         <ul className={`header__nav ${isMenuOpen ? 'open' : ''}`}>
           <li className="header__nav-item">
-            <Link to="/">HOME</Link>
+            <NavLink to="/" >HOME</NavLink>
           </li>
           <li className="header__nav-item">
-            <Link to="/headphones">HEADPHONES</Link>
+            <NavLink to="/headphones" >HEADPHONES</NavLink>
           </li>
           <li className="header__nav-item">
-            <Link to="/speakers">SPEAKERS</Link>
+            <NavLink to="/speakers" >SPEAKERS</NavLink>
           </li>
           <li className="header__nav-item">
-            <Link to="/earphones">EARPHONES</Link>
+            <NavLink to="/earphones">EARPHONES</NavLink>
           </li>
         </ul>
         <div className="header__cart" onClick={toggleCart}>
+          {cartItems.length > 0 && <div className="cart__count">{cartItems.length}</div>}
             <FaShoppingCart/>
         </div>
       </div>

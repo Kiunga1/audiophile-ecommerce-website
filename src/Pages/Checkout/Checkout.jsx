@@ -4,9 +4,20 @@ import "./Checkout.css";
 import { Link } from "react-router-dom";
 import CheckoutIcon from '../../assets/checkouticon/checkout-icon.png'
 import Button from "../../components/Button/Button";
+import Modal from "../../components/Modal/Modal";
 
 const Checkout = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { cartItems } = useCart();
+
+  //Toggle Modal visibility
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   // Function to calculate total price of items in the cart
   const calculateTotalPrice = () => {
@@ -65,6 +76,7 @@ const Checkout = () => {
       <Link to="/" className="go-back-link">
         <p>Go Back</p>
       </Link>
+      <div className="container">
       <div className="checkout-container">
         <h1>CHECKOUT</h1>
         <div className="checkout-billing">
@@ -185,7 +197,7 @@ const Checkout = () => {
             </div>
           </div>
 
-          {/* Additional input fields for e-money or cash on delivery */}
+          {/* Additional input fields for e-money*/}
           {paymentDetails.paymentMethod === "eMoney" && (
             <div className="eMoney-details">
               <div className="eMoney-number">
@@ -258,12 +270,53 @@ const Checkout = () => {
                 <span className="bold grand-total">${calculateTotalWithVATAndShipping().toFixed(2)}</span>
               </div>
           </div>
-            {/* Summary content remains unchanged */}
 
-            <Button backgroundColor="#D87D4A" hoverColor="#FBAF85" content="CONTINUE & PAY" fullWidth={true} />  
+            <Button backgroundColor="#D87D4A" hoverColor="#FBAF85" content="CONTINUE & PAY" fullWidth={true} onClick={handleOpenModal} /> 
+            {/* Modal component with content */}
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        {/* Content inside the modal */}
+        <div className="modal-icon">
+          <img src="src\assets\checkouticon\tick.png" alt="" />
+        </div>
+        <h2 >THANK YOU FOR YOUR ORDER </h2>
+        <p>You will receive an email confirmation shortly</p>
+        {/* Glitter elements */}
+        <div className="glitters">
+          {[...Array(10)].map((_, index) => (
+            <div key={index} className="glitter" style={{ left: `${Math.random() * 100}%`, animationDelay: `${Math.random()}s` }}></div>
+          ))}
+        </div>
+        <div className="summary__details">
+          <ul className="modal_list">
+            {/* Render cart items */}
+            {cartItems.map((item) => (
+                <li key={item.id} className="modal-cart-item">
+                  <div className="item-details">
+                    <img src={item.image.desktop} alt="Product" className="modal_product-image" />
+                    <div className="item-detail">
+                      <h5 className="item-name">{item.name}</h5>
+                      <p className="item-price">${(item.price * item.quantity).toFixed(2)}</p>
+                    </div>
+                  </div>  
+                  <p className="item-quantity"> X{item.quantity}</p>
+                </li>
+              ))}
+          </ul>
+          {/* Display the grand total */}
+          <div className="grand-total-container">
+            <p>Grand Total:</p>
+            <p>${calculateTotalPrice().toFixed(2)}</p>
+          </div>
+        </div>
+        <Link to='/'>
+          <Button backgroundColor="#D87D4A" hoverColor="#FBAF85" content="BACK TO HOME" fullWidth={true} />      
+        </Link>
 
+      </Modal> 
         </div>
       </div>
+      </div>
+      
     </div>
   );
 };
