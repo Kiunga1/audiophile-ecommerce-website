@@ -1,6 +1,6 @@
 
 import ProductCard from '../../components/ProductCard/ProductCard'
-import data from '../../../resources/data.json'
+import data from '../../../public/resources/data.json'
 import './Categorypage.css'
 import About from "../../components/About/About"
 import Category from "../../components/categories/Category"

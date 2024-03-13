@@ -1,6 +1,6 @@
 import { useCart } from '../../context/CartContext';
 import { Link, useParams } from 'react-router-dom'
-import data from '../../../resources/data.json';
+import data from '../../../public/resources/data.json';
 import Button from '../../components/Button/Button'
 import Category from '../../components/categories/Category'
 import About from '../../components/About/About'

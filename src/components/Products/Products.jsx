@@ -30,7 +30,7 @@ const Products = () => {
         <div className="img"></div>
         <div className="product__three__details">
           <h3 className='title'>YX1 earphones</h3>
-          <Link to="/product/yx1 earphones">
+          <Link to="/product/yx1-earphones">
             <Button content='See Product' backgroundColor="#F1F1F1" hoverColor="#000000" hoverTextColor='white' color='#000000' border="1px solid black"/>
           </Link>
         
