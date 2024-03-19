@@ -13,12 +13,10 @@ const Category = () => {
         <img src={Headphones} alt='Headphones' />
         <h2 className="category__title">Headphones</h2>
         <div className="shop__button">
-          <Link to="/headphones">
             <span>SHOP</span>
             <div className='arrow'>
-              <MdKeyboardArrowRight/>
+              <Link to="/speakers"><MdKeyboardArrowRight/></Link>
             </div>
-          </Link>
         </div>
       </div>
 
