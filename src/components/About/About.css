@@ -3,7 +3,8 @@
     flex-direction: column;
     text-align: center;
     gap: 30px;
-    padding: 6rem 1.2rem;
+    padding: 1.2rem;
+    padding-bottom: 6rem;
 }
 
 .about__img {
