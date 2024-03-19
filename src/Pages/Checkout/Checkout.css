@@ -3,10 +3,15 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 30px;
-  padding: 20px;
+  gap: 2rem;
+  padding: 1.2rem;
+  padding-bottom: 6rem;
 }
 
+.container{
+  display: grid;
+  gap: 4rem;
+}
 .checkout > div {
   padding-bottom: 20px;
 }
@@ -21,7 +26,9 @@
   font-weight: 700;
 }
 
-.checkout input[type="text"] {
+.checkout input[type="text"], 
+.checkout input[type="tel"],
+.checkout input[type="email"]{
   width: 100%;
   padding: 15px;
   margin-bottom: 10px;
@@ -44,7 +51,6 @@
   border: 1px solid #ccc;
   padding: 10px 30px;
   border-radius: 5px;
-  /* display: inline-block; */
 }
 
 .e-money, .cash-on-delivery {
@@ -104,6 +110,11 @@
   margin-right: 20px;
 }
 
+.summary-container {
+  height: auto;
+  border-radius: 10px;
+} 
+    
 .summary-container p {
   font-size: 15px;
   font-weight: 400;
@@ -143,10 +154,22 @@
   line-height: 25px;
 }
 
+.checkout {
+  background-color: #F1F1F1;
+  /* padding: 0 10%; */
+}
+
+.checkout-container, .summary-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
 /* Tablets and Desktop*/
 @media only screen and (min-width: 768px){
   .checkout {
-    padding: 0 5%;
+    padding:  5%;
+    padding-bottom: 10%;
   }
 
   .payment-method {
@@ -156,7 +179,7 @@
     margin-bottom: 15px;
   }
   
-  .biling-info, .grid-display, .eMoney-details{
+  .billing-info, .grid-display, .eMoney-details{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
@@ -171,22 +194,10 @@
     padding-top: 50px;
   }
 
-  .summary-container {
-    height: auto;}
-
-
   .cash-on-delivery-info{
   gap: 40px;
 }
 
-.checkout {
-  background-color: #F1F1F1;
-  padding: 0 10%;
-}
 
-.checkout-container, .summary-container {
-  background-color: white;
-  padding: 50px;
-}
 }
 

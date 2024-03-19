@@ -1,6 +1,8 @@
 .product {
     margin-top: 50px;
     padding: 15px;
+    display: grid;
+    gap: 2rem;
 }
 .product__one__content {
     color: white;
@@ -14,13 +16,12 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
     height: 600px;
 }
 .product .product__one__content img{
     height: 200px;
-    width: 140px; 
-    
+    width: 140px;   
 }
 
 .product__title {
@@ -39,7 +40,6 @@
     max-width: 280px;
 }
 
-
 .product__two__content{
     height: 330px;
     background-image: url('../../assets/products/image-speaker-zx7.jpg');
@@ -49,7 +49,7 @@
     background-repeat: no-repeat;
     text-align: left;
     padding-left: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .product__two__content .product__title {
@@ -70,7 +70,7 @@
 }
 
 .product__three__content{
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 20px 0;
 }
 
@@ -165,12 +165,12 @@
     }
 
     .product__two__content{
-        height: 330px;
+        height: 400px;
         background-image: url('../../assets/products/image-speaker-desktop-zx7.jpg');
         padding-left: 30px;
     }
 
     .product__three__content{
-        height: 320px;
+        height: 400px;
     }
 }

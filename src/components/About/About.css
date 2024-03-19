@@ -3,7 +3,7 @@
     flex-direction: column;
     text-align: center;
     gap: 30px;
-    padding: 40px 20px;
+    padding: 6rem 1.2rem;
 }
 
 .about__img {
@@ -13,10 +13,11 @@
     background-repeat: no-repeat;
     height: 300px;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .about .about__details h4 {
+    font-family: 'Manrope', sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     line-height: 39px;
@@ -40,7 +41,7 @@
 /* Tablets */
 @media only screen and (min-width: 768px) {
     .about {
-        padding: 0 5%;
+        padding:10% 5%;
     }
     .about__img {
         background-image: url('../../assets/products/image-best-tablet-gear.jpg');
@@ -66,7 +67,7 @@
         flex-direction: row-reverse;
         justify-content: center;
         align-items: center;
-        padding: 0 10%;
+        padding: 10%;
     }
 
     .about__img {

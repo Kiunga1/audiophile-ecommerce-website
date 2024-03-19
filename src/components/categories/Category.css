@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 60px;
   text-align: center;
   background-color: #ffffff;
 }
@@ -26,8 +26,8 @@
 
 .category img {
   position: absolute;
-  top: -60px;
-  left: 40%;
+  top: -50px;
+  left: 30%;
   height: 150px;
 }
 
@@ -70,7 +70,7 @@
   }
 
   .category img {
-    left: 30%;
+    left: 20%;
   }
 }
 
@@ -79,5 +79,12 @@
   .category {
     gap: 20px;
     padding: 10%;
+  }
+
+  .category img {
+    position: absolute;
+    top: -70px;
+    left: 30%;
+    height: 160px;
   }
 }
